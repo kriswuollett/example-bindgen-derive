@@ -1,0 +1,20 @@
+[package]
+name = "example-bindgen-derive"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+derive-new = "0.7.0"
+serde = { version = "1.0.214", optional = true }
+strum = { version = "0.26.3", features = ["derive"] }
+strum_macros = "0.26.4"
+
+[features]
+serde = ["dep:serde"]
+
+[build-dependencies]
+bindgen = "0.70.1"
+convert_case = "0.6.0"
+
+[patch.crates-io]
+bindgen = { git = "https://github.com/rust-lang/rust-bindgen.git", commit = "07bbd04ea5f386aa3b83e792548127e2a2e33c43" }
